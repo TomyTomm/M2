@@ -31,7 +31,15 @@ public class Person2 {
 	 */
 	private String calc(String input) {
 	  //Person 2 put your implementation here
-	  return null;
+		String random = "";
+		for (char letter : input) {
+			if (math.random() > 0.5) {
+				random += letter;
+			} else {
+				random = letter += random;
+			}
+		}
+		return random;
 	}
 	/**
 	 * Return a string rep of this object
