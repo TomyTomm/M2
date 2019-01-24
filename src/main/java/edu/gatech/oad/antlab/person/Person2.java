@@ -31,15 +31,18 @@ public class Person2 {
 	 */
 	private String calc(String input) {
 	  //Person 2 put your implementation here
-		String random = "";
-		for (char letter : input) {
-			if (math.random() > 0.5) {
-				random += letter;
-			} else {
-				random = letter += random;
-			}
+		StringBuilder random = new StringBuilder(input);
+
+		for (int i = 0; i < random.length(); i++) {
+			int aIndex = (int)(Math.random() * random.length());
+			char a = random.charAt(aIndex);
+			int bIndex = (int)(Math.random() * random.length());
+			char b = random.charAt(bIndex);
+			
+			random.setCharAt(aIndex, b);
+			random.setCharAt(bIndex, a);
 		}
-		return random;
+		return random.toString();
 	}
 	/**
 	 * Return a string rep of this object

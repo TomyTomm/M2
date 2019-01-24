@@ -1,0 +1,36 @@
+plugins {
+	id 'java'
+}
+
+defaultTasks 'jar'
+
+sourceCompatibility = '1.8'
+targetCompatibility = '1.8'
+
+version = '1.0.0'
+
+sourceSets {
+	main {
+		java {
+			srcDirs = ['src']
+		}
+	}
+	test {
+		java {
+			srcDirs = []
+		}
+	}
+}
+
+jar {
+	manifest {
+		attributes('Main-Class': 'edu.gatech.oad.antlab.pkg1.AntLabMain',
+			'class-path': '../../lib/resources.jar')
+	}
+}
+
+
+
+dependencies {
+	compile files('lib/resources.jar')
+}
