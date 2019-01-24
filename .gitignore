@@ -3,3 +3,5 @@
 *.eml
 *.iml
 *.class
+build/
+.gradle/
